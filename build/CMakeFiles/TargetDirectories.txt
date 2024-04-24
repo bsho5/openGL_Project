@@ -1,0 +1,9 @@
+/Users/bsho5/projects/openGlProject/build/CMakeFiles/glad.dir
+/Users/bsho5/projects/openGlProject/build/CMakeFiles/opengl.dir
+/Users/bsho5/projects/openGlProject/build/CMakeFiles/edit_cache.dir
+/Users/bsho5/projects/openGlProject/build/CMakeFiles/rebuild_cache.dir
+/Users/bsho5/projects/openGlProject/build/lib/glm-master/CMakeFiles/edit_cache.dir
+/Users/bsho5/projects/openGlProject/build/lib/glm-master/CMakeFiles/rebuild_cache.dir
+/Users/bsho5/projects/openGlProject/build/lib/glm-master/glm/CMakeFiles/glm.dir
+/Users/bsho5/projects/openGlProject/build/lib/glm-master/glm/CMakeFiles/edit_cache.dir
+/Users/bsho5/projects/openGlProject/build/lib/glm-master/glm/CMakeFiles/rebuild_cache.dir

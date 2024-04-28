@@ -1,4 +1,9 @@
 #include "glad.h"
+#include "glm/ext/matrix_float4x4.hpp"
+#include "glm/ext/matrix_transform.hpp"
+
+#include "glm/gtc/type_ptr.hpp"
+#include <cstdlib>
 #include <cstring>
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
@@ -9,18 +14,23 @@
 
 // Windows dimensions
 const GLint width = 800, height = 600;
-
-GLuint VBO,VAO,shader;
+bool direction = true;
+float triOffset = 0.0f;
+float triMaxOffset = 0.7f;
+float triIncrement =0.005f ;
+GLuint VBO,VAO,shader,uniformModel;
 
 // Vertex shader 
 static const char* vertex_shader_text = 
-"#version 330                                                       \n\
+"#version 330                                                      \n\
                                                                    \n\
-layout ( location = 0 ) in vec3 pos;                                 \n\
+layout ( location = 0 ) in vec3 pos;                               \n\
+                                                                   \n\
+uniform mat4 uniformModel;                                          \n\
                                                                    \n\
 void main()                                                        \n\
 {                                                                  \n\
-    gl_Position = vec4(0.3*pos.x,0.3*pos.y,0.3*pos.z, 1.0);                    \n\
+    gl_Position =  uniformModel * vec4(0.3*pos.x  ,0.3*pos.y ,0.3*pos.z, 1.0);        \n\
 }";
 
 // Fragment shader 
@@ -125,6 +135,7 @@ void compileShaders()
     return;
     }
 
+    uniformModel = glad_glGetUniformLocation(shader,"uniformModel");
    }
   
 
@@ -163,8 +174,8 @@ int main(void)
 
     // Set current context
     glfwMakeContextCurrent(main_window);
-    gladLoadGL(); 
-    // glfwSwapInterval(1);
+     gladLoadGL(); 
+   
 
     // Create viewport 
     glad_glViewport(0,0,buffer_width,buffer_height);
@@ -178,12 +189,32 @@ int main(void)
     while (!glfwWindowShouldClose(main_window)) {
     // Get + handle user input
     glfwPollEvents();
-     
+
+    // Moving the triangle 
+     if (direction) {
+     triOffset+=triIncrement;
+     }else {
+     triOffset-=triIncrement;
+     }
+
+     if (std::abs(triOffset)>=triMaxOffset) {
+     direction =!direction;
+     }
+
     // Clear the window
     glad_glClearColor(0.0f,0.0f,0.0f,1.0f);
     glad_glClear(GL_COLOR_BUFFER_BIT);
 
     glad_glUseProgram(shader);
+
+    glm::mat4 model(1) ;
+     glm::mat4 model_test(1) ;
+
+    model = glm::translate(model, glm::vec3(triOffset,triOffset,0.0f));
+     model = glm::scale(model, glm::vec3(triOffset,triOffset,0.0f));
+  
+    glUniformMatrix4fv(uniformModel,1,GL_FALSE,glm::value_ptr(model));
+
     glad_glBindVertexArray(VAO);
 
     glad_glDrawArrays(GL_TRIANGLES,0,3);

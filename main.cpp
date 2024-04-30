@@ -14,10 +14,15 @@
 
 // Windows dimensions
 const GLint width = 800, height = 600;
+
 bool direction = true;
 float triOffset = 0.0f;
 float triMaxOffset = 0.7f;
 float triIncrement =0.005f ;
+bool rotate = true;
+float triRotateOffset = 0.0f;
+float triRotateMaxOffset = 3.14159265359f*2;
+float triRotateIncrement =0.005f ;
 GLuint VBO,VAO,shader,uniformModel;
 
 // Vertex shader 
@@ -45,7 +50,9 @@ void main()                                                        \n\
 }"
 ;
  
-
+float toRadiant (float angle){
+return angle*(3.14159265359/180.0);
+}
 
 void CreateTriangle( ){
     GLfloat vertices[]={
@@ -200,6 +207,15 @@ int main(void)
      if (std::abs(triOffset)>=triMaxOffset) {
      direction =!direction;
      }
+     if (rotate) {
+     triRotateOffset+=triRotateIncrement;
+     }else {
+     triRotateOffset-=triRotateIncrement;
+     }
+
+     if (triRotateOffset>=triMaxOffset||triRotateOffset==0) {
+     rotate =!rotate;
+     }
 
     // Clear the window
     glad_glClearColor(0.0f,0.0f,0.0f,1.0f);
@@ -208,10 +224,11 @@ int main(void)
     glad_glUseProgram(shader);
 
     glm::mat4 model(1) ;
-     glm::mat4 model_test(1) ;
-
+    model = glm::rotate(model, triRotateOffset,glm::vec3(0.0f,0.0f,1.0f));
     model = glm::translate(model, glm::vec3(triOffset,triOffset,0.0f));
-     model = glm::scale(model, glm::vec3(triOffset,triOffset,0.0f));
+    model = glm::scale(model, glm::vec3(triOffset,triOffset,0.0f));
+    
+
   
     glUniformMatrix4fv(uniformModel,1,GL_FALSE,glm::value_ptr(model));
 

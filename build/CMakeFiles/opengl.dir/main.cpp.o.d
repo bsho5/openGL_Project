@@ -33,10 +33,8 @@ CMakeFiles/opengl.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_uintptr_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/_types/_intmax_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/_types/_uintmax_t.h \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/matrix_float4x4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat4x4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/qualifier.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/matrix_clip_space.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/scalar_constants.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/setup.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/cassert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/assert.h \
@@ -83,13 +81,17 @@ CMakeFiles/opengl.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.0/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__nullptr \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../simd/platform.h \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec4.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/compute_vector_relational.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/scalar_constants.inl \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/limits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__utility/forward.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__utility/move.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__undef_macros \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../geometric.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/qualifier.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec3.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/compute_vector_relational.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/compute_vector_decl.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/functional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__algorithm/search.h \
@@ -265,145 +267,140 @@ CMakeFiles/opengl.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__functional/ranges_operations.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/_vectorize.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat4x4.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../matrix.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/qualifier.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/setup.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../vec2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_bool2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/func_geometric.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../exponential.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec1.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec1.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/./compute_vector_relational.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec2.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec2.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/./compute_vector_relational.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_bool2_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_float2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_float2_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_double2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_double2_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_int2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_int2_sized.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/vector_int2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/scalar_int_sized.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_uint2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_uint2_sized.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/vector_uint2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/scalar_uint_sized.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../vec3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_bool3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec3.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_bool3_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_float3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_float3_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_double3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_double3_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_int3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_int3_sized.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/vector_int3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_uint3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_uint3_sized.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/vector_uint3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../vec4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_bool4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_bool4_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_float4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_float4_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_double4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_double4_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_int4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_int4_sized.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/vector_int4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_uint4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/vector_uint4_sized.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/vector_uint4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../mat2x2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double2x2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat2x2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat2x2.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double2x2_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float2x2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float2x2_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../mat2x3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double2x3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat2x3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat2x3.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double2x3_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float2x3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float2x3_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../mat2x4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double2x4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat2x4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat2x4.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double2x4_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float2x4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float2x4_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../mat3x2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double3x2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat3x2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat3x2.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double3x2_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float3x2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float3x2_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../mat3x3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double3x3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat3x3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat3x3.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../common.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/_fixes.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec4.inl \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/math.h \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/func_common.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/func_exponential.inl \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../vector_relational.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/func_vector_relational.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/func_vector_relational.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../common.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/_fixes.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/func_common.inl \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/compute_common.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec1.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_vec1.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double3x3_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float3x3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float3x3_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../mat3x4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double3x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../trigonometric.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/func_trigonometric.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/matrix_clip_space.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/matrix_float4x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat4x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat4x4.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../matrix.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../vec2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_bool2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_bool2_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_float2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_float2_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_double2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_double2_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_int2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_int2_sized.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/vector_int2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/scalar_int_sized.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_uint2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_uint2_sized.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/vector_uint2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/scalar_uint_sized.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../vec3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_bool3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_bool3_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_float3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_float3_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_double3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_double3_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_int3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_int3_sized.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/vector_int3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_uint3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_uint3_sized.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/vector_uint3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../vec4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_bool4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_bool4_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_float4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_float4_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_double4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_double4_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_int4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_int4_sized.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/vector_int4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_uint4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/vector_uint4_sized.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/vector_uint4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../mat2x2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double2x2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat2x2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat2x2.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double2x2_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float2x2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float2x2_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../mat2x3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double2x3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat2x3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat2x3.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double2x3_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float2x3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float2x3_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../mat2x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double2x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat2x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat2x4.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double2x4_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float2x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float2x4_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../mat3x2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double3x2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat3x2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat3x2.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double3x2_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float3x2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float3x2_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../mat3x3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double3x3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat3x3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat3x3.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double3x3_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float3x3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float3x3_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../mat3x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double3x4.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat3x4.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat3x4.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double3x4_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float3x4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float3x4_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../mat4x2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double4x2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double3x4_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float3x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float3x4_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../mat4x2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double4x2.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat4x2.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat4x2.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double4x2_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float4x2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float4x2_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../mat4x3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double4x3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double4x2_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float4x2.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float4x2_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../mat4x3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double4x3.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat4x3.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_mat4x3.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double4x3_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float4x3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float4x3_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../mat4x4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double4x4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_double4x4_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float4x4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/.././ext/matrix_float4x4_precision.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/func_matrix.inl \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double4x3_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float4x3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float4x3_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../mat4x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double4x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_double4x4_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float4x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/.././ext/matrix_float4x4_precision.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/func_matrix.inl \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../geometric.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/type_vec3.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/func_geometric.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../exponential.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/type_vec1.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/type_vec2.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/type_vec4.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/func_exponential.inl \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/matrix_transform.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../gtc/constants.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../gtc/../ext/scalar_constants.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/scalar_constants.inl \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../gtc/constants.inl \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../geometric.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../trigonometric.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/func_trigonometric.inl \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../matrix.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/matrix_transform.inl \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/gtc/type_ptr.hpp \
@@ -417,8 +414,6 @@ CMakeFiles/opengl.dir/main.cpp.o: \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../gtc/../ext/matrix_projection.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/matrix_projection.inl \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../gtc/../ext/matrix_clip_space.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../ext/scalar_constants.hpp \
-  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/matrix_clip_space.inl \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../gtc/../ext/matrix_transform.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../gtc/matrix_transform.inl \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../gtc/../geometric.hpp \
@@ -439,6 +434,8 @@ CMakeFiles/opengl.dir/main.cpp.o: \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/type_quat.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/type_mat3x3.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/type_mat4x4.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/type_vec3.hpp \
+  /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../detail/type_vec4.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../ext/vector_relational.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/../detail/../ext/quaternion_relational.hpp \
   /Users/bsho5/projects/openGlProject/lib/glm-master/glm/ext/quaternion_relational.inl \

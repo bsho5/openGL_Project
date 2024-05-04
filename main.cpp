@@ -1,4 +1,5 @@
 #include "glad.h"
+#include "glm/ext/matrix_clip_space.hpp"
 #include "glm/ext/matrix_float4x4.hpp"
 #include "glm/ext/matrix_transform.hpp"
 
@@ -13,7 +14,7 @@
 
 
 // Windows dimensions
-const GLint width = 800, height = 600;
+const GLint width = 800, height = 800;
 
 bool direction = true;
 float triOffset = 0.0f;
@@ -22,41 +23,49 @@ float triIncrement =0.005f ;
 bool rotate = true;
 float triRotateOffset = 0.0f;
 float triRotateMaxOffset = 3.14159265359f*2;
-float triRotateIncrement =0.005f ;
-GLuint VBO,VAO,VBO2,VAO2,shader_test,shader,uniformModel,uniformModel_test;
+float triRotateIncrement =0.025f ;
+GLuint VBO,VAO,EBO,VBO2,VAO2,shader_test,shader,uniformModel,uniformProjection,uniformModel_test;
 
 // Vertex shader 
 static const char* vertex_shader_text = 
 "#version 330                                                      \n\
                                                                    \n\
 layout ( location = 0 ) in vec3 pos;                               \n\
+                                                                    \n\
+ out vec4 vColor;                                                    \n\
+ out vec4 vColor2;                                                    \n\
                                                                    \n\
-uniform mat4 uniformModel;                                          \n\
+uniform mat4 model;                                          \n\
+uniform mat4 projection;                                          \n\
                                                                    \n\
 void main()                                                        \n\
 {                                                                  \n\
-    gl_Position =  uniformModel * vec4(0.3*pos.x  ,0.3*pos.y ,0.3*pos.z, 1.0);        \n\
+    gl_Position = projection * model * vec4(0.3*pos.x  ,0.3*pos.y ,0.3*pos.z, 1.0);        \n\
+    vColor = vec4(clamp(pos,0.2f,1.0f), 1.0f);        \n\
+       vColor2 = vec4(clamp(vec3(pos.y,pos.x,pos.z),0.2f,1.0f), 1.0f);        \n\
 }";
 
 // Fragment shader 
 static const char* fragment_shader_text =
 "#version 330                                                       \n\
                                                                    \n\
+in vec4 vColor;                                                     \n\
 out vec4 color;                                                    \n\
                                                                    \n\
 void main()                                                        \n\
 {                                                                  \n\
-     color = vec4(0.8,0.8,0.8,1.0);                                \n\
+     color =vColor;                                                 \n\
 }"
 ;
 static const char* fragment_shader_text_test =
 "#version 330                                                       \n\
                                                                    \n\
+in vec4 vColor;                                                     \n\
 out vec4 color;                                                    \n\
                                                                    \n\
 void main()                                                        \n\
 {                                                                  \n\
-     color = vec4(0.7,0.7,0.7,1.0);                                \n\
+     color =vColor;                                                 \n\
 }"
 ;
  
@@ -65,11 +74,29 @@ return angle*(3.14159265359/180.0);
 }
 
 void CreateTriangle( ){
+ unsigned int elements[]={
+0,3,4,
+4,3,2,
+ 0,4,2,
+0,3,1,
+1,3,2,
+// 2,3,0,
+ 0,1,2,
+
+ };
     GLfloat vertices[]={
         -1.0f, -1.0f, 0.0f,
+        0.0f, -1.0f, 1.0f,
          1.0f, -1.0f, 0.0f,
-         1.0f,  1.0f, 0.0f
+         0.0f,  1.0f, 0.0f,
+         0.0f, -1.0f, -1.0f,
     };
+// for the previous rectangle along with vertices2
+    // GLfloat vertices[]={
+    //     -1.0f, -1.0f, 0.0f,
+    //      1.0f, -1.0f, 0.0f,
+    //      1.0f,  1.0f, 0.0f
+    // };
        GLfloat vertices2[]={
         -1.0f,  -1.0f, 0.0f,
          -1.0f, 1.0f, 0.0f,
@@ -77,6 +104,10 @@ void CreateTriangle( ){
     };
    glad_glGenVertexArrays(1,&VAO); 
    glad_glBindVertexArray(VAO);
+
+   glad_glGenBuffers(1,&EBO);
+   glad_glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,EBO);
+   glad_glBufferData(GL_ELEMENT_ARRAY_BUFFER,sizeof(elements),elements,GL_STATIC_DRAW);
 
    glad_glGenBuffers(1,&VBO);
    glad_glBindBuffer(GL_ARRAY_BUFFER,VBO);
@@ -98,8 +129,10 @@ void CreateTriangle( ){
    glad_glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,0,0);
    glad_glEnableVertexAttribArray(0);
 
-   glad_glBindBuffer(GL_ARRAY_BUFFER,0);
    glad_glBindVertexArray(0);
+   glad_glBindBuffer(GL_ARRAY_BUFFER,0);
+   glad_glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
+   
    
     
 }
@@ -173,8 +206,9 @@ void compileShaders()
     return;
     }
 
-    uniformModel = glad_glGetUniformLocation(shader,"uniformModel");
+    uniformModel = glad_glGetUniformLocation(shader,"model");
     uniformModel_test = glad_glGetUniformLocation(shader_test,"uniformModel");
+    uniformProjection = glad_glGetUniformLocation(shader,"projection");
    }
   
 
@@ -187,6 +221,9 @@ int main(void)
         return 1;
     }
 
+    
+// glad_glDepthFunc(GL_LEQUAL);
+// glad_glDepthMask();
     // Setup GLFW Windows Properties
     // openGL version
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -222,8 +259,10 @@ int main(void)
     CreateTriangle();
      
     compileShaders();
-
- 
+  
+ glEnable(GL_DEPTH_TEST);
+   glm::mat4 projection ;
+    projection = glm::perspective(45.0f, (GLfloat)buffer_width/(GLfloat)buffer_height,0.1f,100.0f);
     // Loop until window close 
     while (!glfwWindowShouldClose(main_window)) {
     // Get + handle user input
@@ -251,35 +290,41 @@ int main(void)
 
     // Clear the window
     glad_glClearColor(0.0f,0.0f,0.0f,1.0f);
-    glad_glClear(GL_COLOR_BUFFER_BIT);
+    
+     glad_glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glad_glUseProgram(shader);
    
     glm::mat4 model(1) ;
-    model = glm::rotate(model, triRotateOffset,glm::vec3(0.0f,0.0f,1.0f));
-    model = glm::translate(model, glm::vec3(triOffset,triOffset,0.0f));
-    model = glm::scale(model, glm::vec3(triOffset,triOffset,0.0f));
+     model = glm::translate(model, glm::vec3(0.0f,0.0f,-2.5f));
+    model = glm::rotate(model, triRotateOffset,glm::vec3(1.0f,1.0f,1.0f));
+    
+    
+    // model = glm::scale(model, glm::vec3(triOffset,triOffset,0.0f));
     
 
   
     glUniformMatrix4fv(uniformModel,1,GL_FALSE,glm::value_ptr(model));
+    glUniformMatrix4fv(uniformProjection,1,GL_FALSE,glm::value_ptr(projection));
     
     glad_glBindVertexArray(VAO);
+    glad_glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,EBO);
 
-    glad_glDrawArrays(GL_TRIANGLES,0,3);
+    glad_glDrawElements(GL_TRIANGLES,18,GL_UNSIGNED_INT,0);
 
     // glad_glBindVertexArray(0);
     
  
   
-    glad_glUseProgram(shader_test);
-    glad_glBindVertexArray(VAO2);
+    // glad_glUseProgram(shader_test);
+    // glad_glBindVertexArray(VAO2);
    
   
-    glUniformMatrix4fv(uniformModel_test,1,GL_FALSE,glm::value_ptr(model));
-    glad_glDrawArrays(GL_TRIANGLES,0,3);
+    // glUniformMatrix4fv(uniformModel_test,1,GL_FALSE,glm::value_ptr(model));
+    // glad_glDrawArrays(GL_TRIANGLES,0,3);
 
     glad_glBindVertexArray(0);
+    glad_glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
     glad_glUseProgram(0);
 
     

@@ -23,7 +23,7 @@ bool rotate = true;
 float triRotateOffset = 0.0f;
 float triRotateMaxOffset = 3.14159265359f*2;
 float triRotateIncrement =0.005f ;
-GLuint VBO,VAO,shader,uniformModel;
+GLuint VBO,VAO,VBO2,VAO2,shader_test,shader,uniformModel,uniformModel_test;
 
 // Vertex shader 
 static const char* vertex_shader_text = 
@@ -46,7 +46,17 @@ out vec4 color;                                                    \n\
                                                                    \n\
 void main()                                                        \n\
 {                                                                  \n\
-     color = vec4(1.0,1.0,1.0,1.0);                                \n\
+     color = vec4(0.8,0.8,0.8,1.0);                                \n\
+}"
+;
+static const char* fragment_shader_text_test =
+"#version 330                                                       \n\
+                                                                   \n\
+out vec4 color;                                                    \n\
+                                                                   \n\
+void main()                                                        \n\
+{                                                                  \n\
+     color = vec4(0.7,0.7,0.7,1.0);                                \n\
 }"
 ;
  
@@ -58,7 +68,12 @@ void CreateTriangle( ){
     GLfloat vertices[]={
         -1.0f, -1.0f, 0.0f,
          1.0f, -1.0f, 0.0f,
-         0.0f,  1.0f, 0.0f
+         1.0f,  1.0f, 0.0f
+    };
+       GLfloat vertices2[]={
+        -1.0f,  -1.0f, 0.0f,
+         -1.0f, 1.0f, 0.0f,
+         1.0f,  1.0f, 0.0f
     };
    glad_glGenVertexArrays(1,&VAO); 
    glad_glBindVertexArray(VAO);
@@ -73,7 +88,18 @@ void CreateTriangle( ){
    glad_glBindBuffer(GL_ARRAY_BUFFER,0);
    glad_glBindVertexArray(0);
    
+   glad_glGenVertexArrays(1,&VAO2); 
+   glad_glBindVertexArray(VAO2);
 
+   glad_glGenBuffers(1,&VBO2);
+   glad_glBindBuffer(GL_ARRAY_BUFFER,VBO2);
+   glad_glBufferData(GL_ARRAY_BUFFER,sizeof(vertices2),vertices2,GL_STATIC_DRAW);
+
+   glad_glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,0,0);
+   glad_glEnableVertexAttribArray(0);
+
+   glad_glBindBuffer(GL_ARRAY_BUFFER,0);
+   glad_glBindVertexArray(0);
    
     
 }
@@ -109,6 +135,7 @@ void compileShaders()
    {
     
     shader = glad_glCreateProgram();
+    shader_test = glad_glCreateProgram();
 
     if(!shader)
     {
@@ -118,11 +145,14 @@ void compileShaders()
 
     addShader(shader, vertex_shader_text, GL_VERTEX_SHADER);
     addShader(shader, fragment_shader_text, GL_FRAGMENT_SHADER);
+    addShader(shader_test, vertex_shader_text, GL_VERTEX_SHADER);
+    addShader(shader_test, fragment_shader_text_test, GL_FRAGMENT_SHADER);
 
     GLint result = 0;
     GLchar eLog[1024]={0};
 
     glad_glLinkProgram(shader);
+    glad_glLinkProgram(shader_test);
     glad_glGetProgramiv(shader,GL_LINK_STATUS,&result);
 
     if (!result) 
@@ -133,6 +163,7 @@ void compileShaders()
     }
 
     glad_glValidateProgram(shader);
+    glad_glValidateProgram(shader_test);
     glad_glGetShaderiv(shader,GL_VALIDATE_STATUS,&result);
 
     if (!result) 
@@ -143,6 +174,7 @@ void compileShaders()
     }
 
     uniformModel = glad_glGetUniformLocation(shader,"uniformModel");
+    uniformModel_test = glad_glGetUniformLocation(shader_test,"uniformModel");
    }
   
 
@@ -222,7 +254,7 @@ int main(void)
     glad_glClear(GL_COLOR_BUFFER_BIT);
 
     glad_glUseProgram(shader);
-
+   
     glm::mat4 model(1) ;
     model = glm::rotate(model, triRotateOffset,glm::vec3(0.0f,0.0f,1.0f));
     model = glm::translate(model, glm::vec3(triOffset,triOffset,0.0f));
@@ -231,13 +263,26 @@ int main(void)
 
   
     glUniformMatrix4fv(uniformModel,1,GL_FALSE,glm::value_ptr(model));
-
+    
     glad_glBindVertexArray(VAO);
 
     glad_glDrawArrays(GL_TRIANGLES,0,3);
 
+    // glad_glBindVertexArray(0);
+    
+ 
+  
+    glad_glUseProgram(shader_test);
+    glad_glBindVertexArray(VAO2);
+   
+  
+    glUniformMatrix4fv(uniformModel_test,1,GL_FALSE,glm::value_ptr(model));
+    glad_glDrawArrays(GL_TRIANGLES,0,3);
+
     glad_glBindVertexArray(0);
     glad_glUseProgram(0);
+
+    
 
     glfwSwapBuffers(main_window);
 
